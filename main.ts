@@ -6,7 +6,7 @@
 import { cp, mkdir, readdir, stat } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildDossier } from './vendor/makefun-threejs.ts';
+import { buildDossier } from './vendor/makefun-game.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const out = resolve(process.env.MAKEFUN_OUTPUT_DIR || join(__dirname, 'out'));
@@ -31,6 +31,7 @@ async function main() {
     screenshots: { max: 4, max_bytes: 262144 },
     game_max_files: 993,
     game_max_bytes: 50331648,
+    game_path_max_bytes: 1000,
   });
   const { writeFile } = await import('node:fs/promises');
   // buildDossier returns the dossier JSON as bytes; write them as-is.
