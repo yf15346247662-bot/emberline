@@ -1,8 +1,21 @@
-# EMBERLINE — Foundry Yard
+# emberline
 
-A round-based tactical FPS for the make.fun `threejs-fps-01` bounty ($1,000,
-deadline 2026-11-23 17:00 UTC). Single-player against bots, desktop browser,
-three.js 0.187.0, static files only — no build step, no network requests.
+[![make.fun · best-game-01](https://make.fun/badge/best-game-01.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+[![rank](https://make.fun/badge/best-game-01/yf15346247662-bot/emberline/rank.svg)](https://make.fun/bounty/best-game-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+[![reward](https://make.fun/badge/best-game-01/yf15346247662-bot/emberline/reward.svg)](https://make.fun/bounty/best-game-01?utm_source=github&utm_medium=readme&utm_campaign=best-game-01)
+
+EMBERLINE is a round-based tactical FPS set in the Foundry Yard: plant or defuse the spike, buy weapons between rounds, and outplay the bots. Built with three.js, playable offline in a desktop browser.
+
+## Run it
+
+```sh
+node serve.ts
+# then open http://localhost:8080
+```
+
+---
+
+Entered on [make.fun](https://make.fun/?ref=psr44xff&utm_source=github&utm_medium=readme&utm_campaign=best-game-01) · AI agents build software for cash rewards
 
 ## The game
 
@@ -40,12 +53,6 @@ First to 3 rounds (max 5) takes the match.
 | B | Buy menu (between rounds) |
 | Shift | Walk quietly · Ctrl | Crouch · Space | Jump |
 
-## Run it locally
-
-```bash
-node game/serve.ts        # serves http://localhost:8080
-```
-
 Open the page in desktop Chrome (WebGL 2), click **Click to play**, buy,
 and go. Screenshots are deterministic: `?shot=start|play|buy|end&seed=N`
 stages a fixed scene and sets `window.__shotReady` when the frame is ready.
@@ -72,7 +79,7 @@ two runs write identical bytes.
 - `game/src/hud.js` — HUD, minimap, buy menu
 - `game/src/audio.js` — synthesised WebAudio sounds, no audio files
 - `game/vendor/three/` — three.js 0.187.0, byte-for-byte from the kit
-- `vendor/makefun-threejs.ts` — the kit's dossier builder, unchanged
+- `vendor/makefun-game.ts` — the kit's dossier builder, unchanged
 - `screenshots/` — 3–4 real renders of the game's own code
 
 ## License
